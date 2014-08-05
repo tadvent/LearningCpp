@@ -10,6 +10,6 @@ sum.o: sum.cpp
 
 
 clean:
-	rm sum.exe
+	rm -f sum.exe sum.o
 
 
