@@ -2,16 +2,16 @@
 run: header.exe
 	./header.exe
 
-header.exe: CA.o main.o
-	g++ -o header.exe CA.o main.o
+header.exe: main.o B.o
+	g++ -o header.exe main.o B.o
 
-CA.o: CA.cpp CA.h
-	g++ -o CA.o -c CA.cpp
+B.o: B.cpp CA.h
+	g++ -o B.o -c B.cpp
 
 main.o: main.cpp CA.h
 	g++ -o main.o -c main.cpp
 
 clean:
-	rm -f CA.o main.o header.exe
+	rm -f main.o B.o header.exe
 
 
