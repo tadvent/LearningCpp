@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 
-namespace{
 class A{
     int _a, _b;
 public:
@@ -13,5 +12,4 @@ public:
         _b = b;
     }
 };
-}
 
