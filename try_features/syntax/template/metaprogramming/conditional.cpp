@@ -21,8 +21,12 @@ struct Func3{
     static const int value = 3*X - 11;
 };
 
+template <bool B, class T, class F>
+using Cond = typename std::conditional<B,T,F>::type;
+
 template <int X>
 struct Func{
+    /*
     using FT =
         typename std::conditional<
             (X < 1),
@@ -33,6 +37,9 @@ struct Func{
                 Func3<X>
             >::type
         >::type;
+    */
+    using FT = Cond<(X<1), Func1<X>,
+          Cond<(X<10), Func2<X>, Func3<X>>>;
     static const int value = FT::value;
 };
 
