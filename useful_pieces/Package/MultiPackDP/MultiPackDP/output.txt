@@ -1,0 +1,11 @@
+Disk used:10	Disk Capacity:4483
+	Disk No. 1 : free space:   39.88, 钢炼1-47[DVD-20](4443.12)
+	Disk No. 2 : free space:   23.59, 寒蝉(5-26)[DVD12](2032.72) 武器种族传说[DVD-18](2426.69)
+	Disk No. 3 : free space:    9.08, [FLsnow][死后文](1236.72) 钢炼...[DVD18](918.536) 寒蝉·解(13-24+sp)[DVD-121](1376.03) 云之彼端[DVD73](942.635)
+	Disk No. 4 : free space:   17.94, 秒速5cm[DVD73](744.285) 寒蝉(1-4)[DVD12](370) 魔法少女奈叶SS[DVD103](3350.77)
+	Disk No. 5 : free space:   87.56, 魔法少女奈叶2[DVD105](1655.89) 幸运星+OVA[DVD122+](2739.55)
+	Disk No. 6 : free space:  162.87, 叛逆的鲁路修R2[](2910.66) [凉宫春日的忧郁](1409.47)
+	Disk No. 7 : free space:  362.18, 叛逆的鲁路修[DVD109](2833.81) 魔法少女奈叶1[DVD105](1287.02)
+	Disk No. 8 : free space:  485.62, 寒蝉·解(1-12)[DVD-121](1284.21) 灼眼的夏娜2[DVD140](2713.17)
+	Disk No. 9 : free space: 2146.64, 灼眼的夏娜1[DVD139](2336.36)
+	Disk No.10 : free space: 2197.47, Fate/StayNight[DVD23](2285.53)
