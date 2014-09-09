@@ -21,8 +21,12 @@ struct Func3{
     static const int value = 3*X - 11;
 };
 
+template <bool B, class T, class F>
+using Cond = typename std::conditional<B,T,F>::type;
+
 template <int X>
 struct Func{
+    /*
     using FT =
         typename std::conditional<
             (X < 1),
@@ -33,19 +37,27 @@ struct Func{
                 Func3<X>
             >::type
         >::type;
+    */
+    using FT = Cond<(X<1), Func1<X>,
+          Cond<(X<10), Func2<X>, Func3<X>>>;
     static const int value = FT::value;
 };
 
-#define OUT(x) std::cout << "f(" << (x) << ") = " << \
-    Func<(x)>::value << std::endl
+template<int X>
+struct Out{
+    void operator()() const {
+        std::cout << "f(" << X << ") = " << \
+            Func<X>::value << std::endl;
+    }
+};
 
 int main(){
-    OUT(-1);
-    OUT(0);
-    OUT(1);
-    OUT(5);
-    OUT(10);
-    OUT(20);
+    Out<-1>{}();
+    Out<0>{}();
+    Out<1>{}();
+    Out<5>{}();
+    Out<10>{}();
+    Out<20>{}();
 
     return 0;
 }

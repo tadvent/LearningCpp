@@ -19,11 +19,17 @@ struct FacMinus<0>{
     const static int value = 1;
 };
 
+template <bool B, class T, class F>
+using Cond = typename std::conditional<B,T,F>::type;
+
 template <int N>
 struct Fac{
+    /*
     using FacType =
         typename std::conditional<(N>=0), FacPlus<N>, FacMinus<N>>::type;
     const static int value = FacType::value;
+    */
+    const static int value = Cond<(N>=0), FacPlus<N>, FacMinus<N>>::value;
 };
 
 int main(){
