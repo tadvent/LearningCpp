@@ -43,16 +43,21 @@ struct Func{
     static const int value = FT::value;
 };
 
-#define OUT(x) std::cout << "f(" << (x) << ") = " << \
-    Func<(x)>::value << std::endl
+template<int X>
+struct Out{
+    void operator()() const {
+        std::cout << "f(" << X << ") = " << \
+            Func<X>::value << std::endl;
+    }
+};
 
 int main(){
-    OUT(-1);
-    OUT(0);
-    OUT(1);
-    OUT(5);
-    OUT(10);
-    OUT(20);
+    Out<-1>{}();
+    Out<0>{}();
+    Out<1>{}();
+    Out<5>{}();
+    Out<10>{}();
+    Out<20>{}();
 
     return 0;
 }
