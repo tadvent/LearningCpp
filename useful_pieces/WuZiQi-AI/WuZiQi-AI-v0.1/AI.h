@@ -15,13 +15,12 @@
 
 #pragma once
 
-#include <boost/random/mersenne_twister.hpp>
-#include <boost/random/uniform_int_distribution.hpp>
+#include <random>
 #include <vector>
 
 #include "Board.h"
 
-extern boost::random::mt11213b random_generator;
+extern std::default_random_engine random_generator;
 
 // BoardHash class 后面再补充完善
 template<class DataType>
@@ -61,8 +60,8 @@ public:
         index_matrix(2 * MAX_BOARD_SIZE * MAX_BOARD_SIZE),
         check_matrix(2 * MAX_BOARD_SIZE * MAX_BOARD_SIZE)
     {
-        boost::random::uniform_int_distribution<unsigned> urand(1); // 1 ~ 2^32-1
-        boost::random::uniform_int_distribution<unsigned long long> u64rand(1); // 1 ~ 2^64 - 1
+        std::uniform_int_distribution<unsigned> urand(1); // 1 ~ 2^32-1
+        std::uniform_int_distribution<unsigned long long> u64rand(1); // 1 ~ 2^64 - 1
         board.assign(MAX_BOARD_SIZE * MAX_BOARD_SIZE, EMPTY);
         index_color_hash[0] = urand(random_generator);
         index_color_hash[1] = urand(random_generator);
@@ -191,7 +190,7 @@ public:
 class WzqAI
 {
 public:
-    static const int INFINITY = 10000;
+    static const int INTINFINITY = 10000;
     enum {VC4_EXACT = 1, VC4_ALPHA = 2, VC4_BETA = 3};
     struct Board_Status_Save
     {
@@ -353,7 +352,7 @@ public:
     // 当前局面下一步 vc4 的走法存入 vc4_move 变量
     int black_vc4(int a)
     {
-        if(a >= INFINITY - 1){
+        if(a >= INTINFINITY - 1){
             return 0;
         }
         bool isHashSaved;
@@ -378,15 +377,15 @@ public:
         if(board.black_lian5_num() > 0)
         {
             current_status.val_type = VC4_EXACT;
-            current_status.value = INFINITY - 1;
+            current_status.value = INTINFINITY - 1;
             vc4_move = board.black_lian5_begin();   // 将来考虑将 best_move 放入 board_hash 中
-            return INFINITY - 1;
+            return INTINFINITY - 1;
         }
         if(board.white_lian5_num() > 1)
         {
             current_status.val_type = VC4_EXACT;
-            current_status.value = -INFINITY + 2;
-            return -INFINITY + 2;
+            current_status.value = -INTINFINITY + 2;
+            return -INTINFINITY + 2;
         }
         if(board.white_lian5_num() == 1)
         {
@@ -417,12 +416,12 @@ public:
         if(board.black_shua4_num() > 0)
         {
             current_status.val_type = VC4_EXACT;
-            current_status.value = INFINITY - 3;
-            if(a < INFINITY - 3)
+            current_status.value = INTINFINITY - 3;
+            if(a < INTINFINITY - 3)
             {
                 vc4_move = board.black_shua4_begin();
             }
-            return INFINITY - 3;
+            return INTINFINITY - 3;
         }
 
         current_status.val_type = VC4_ALPHA;
@@ -467,7 +466,7 @@ public:
     // 若找到则返回 > 9000 的得分，否则返回 0 附近的值
     int black_vc4_and_defense(int a)
     {
-        if(a >= INFINITY - 1){
+        if(a >= INTINFINITY - 1){
             return 0;
         }
         bool isHashSaved;
@@ -492,20 +491,20 @@ public:
         if(board.black_lian5_num() > 0)
         {
             current_status.val_type = VC4_EXACT;
-            current_status.value = INFINITY - 1;
+            current_status.value = INTINFINITY - 1;
             vc4_defense.clear();
             add_white_rev4();
             for(unsigned pos = board.black_lian5_begin(); pos != Board::INVPOS; pos = board.black_next(pos))
             {
                 vc4_defense.push_back(pos);
             }
-            return INFINITY - 1;
+            return INTINFINITY - 1;
         }
         if(board.white_lian5_num() > 1)
         {
             current_status.val_type = VC4_EXACT;
-            current_status.value = -INFINITY + 2;
-            return -INFINITY + 2;
+            current_status.value = -INTINFINITY + 2;
+            return -INTINFINITY + 2;
         }
         if(board.white_lian5_num() == 1)    // 白棋有一个冲四
         {
@@ -537,8 +536,8 @@ public:
         if(board.black_shua4_num() > 0)
         {
             current_status.val_type = VC4_EXACT;
-            current_status.value = INFINITY - 3;
-            if(a < INFINITY - 3){
+            current_status.value = INTINFINITY - 3;
+            if(a < INTINFINITY - 3){
                 vc4_defense.clear();
                 add_white_rev4();
                 if(board.black_shua4_num() > 1)
@@ -564,7 +563,7 @@ public:
                     board.backtrace();
                 }
             }
-            return INFINITY - 3;
+            return INTINFINITY - 3;
         }
 
         current_status.val_type = VC4_ALPHA;

@@ -380,85 +380,87 @@ int main() try
     
     //////////////////////////////////////////////////////////////////////////
     // Board Performance TEST
-    //WzqAI ai;
+    WzqAI ai;
 
-    //clock_t start, finish;
-    //start = clock();
+    clock_t start, finish;
+    start = clock();
 
-    //for(int i = 0; i < 9000; ++i)
-    //{
-    //    ai.board.move(7, 7, BLACK);
-    //    ai.board.move(6, 8, WHITE);
-    //    ai.board.move(7, 9, BLACK);
-    //    ai.board.move(7, 8, WHITE);
-    //    ai.board.move(8, 8, BLACK);
-    //    ai.board.move(9, 7, WHITE);
-    //    ai.board.move(9, 9, BLACK);
-    //    ai.board.move(10, 10, WHITE);
-    //    ai.board.move(8, 9, BLACK);
-    //    ai.board.move(6, 9, WHITE);
-    //    ai.board.move(8, 7, BLACK);
-    //    ai.board.move(8, 6, WHITE);
-    //    ai.board.move(8, 10, BLACK);
-    //    ai.board.move(8, 11, WHITE);
-    //    ai.board.move(10, 8, BLACK);
-    //    ai.board.move(11, 7, WHITE);
-    //    ai.board.move(6, 10, BLACK);
-    //    ai.board.move(5, 10, WHITE);
-    //    ai.board.move(4, 8, BLACK);
-    //    ai.board.move(7, 11, WHITE);
-    //    ai.board.move(4, 7, BLACK);
-    //    ai.board.move(5, 7, WHITE);
-    //    ai.board.move(4, 6, BLACK);
-    //    ai.board.move(4, 11, WHITE);
-    //    ai.board.move(3, 12, BLACK);
-    //    ai.board.move(4, 5, WHITE);
-    //    ai.board.move(5, 6, BLACK);
-    //    ai.board.move(6, 6, WHITE);
-    //    ai.board.move(6, 5, BLACK);
-    //    ai.board.move(3, 8, WHITE);
-    //    ai.board.move(3, 7, BLACK);
-    //    ai.board.move(4, 4, WHITE);
+    for (int i = 0; i < 9100; ++i)
+    {
+        ai.board.move(7, 7, BLACK);
+        ai.board.move(6, 8, WHITE);
+        ai.board.move(7, 9, BLACK);
+        ai.board.move(7, 8, WHITE);
+        ai.board.move(8, 8, BLACK);
+        ai.board.move(9, 7, WHITE);
+        ai.board.move(9, 9, BLACK);
+        ai.board.move(10, 10, WHITE);
+        ai.board.move(8, 9, BLACK);
+        ai.board.move(6, 9, WHITE);
+        ai.board.move(8, 7, BLACK);
+        ai.board.move(8, 6, WHITE);
+        ai.board.move(8, 10, BLACK);
+        ai.board.move(8, 11, WHITE);
+        ai.board.move(10, 8, BLACK);
+        ai.board.move(11, 7, WHITE);
+        ai.board.move(6, 10, BLACK);
+        ai.board.move(5, 10, WHITE);
+        ai.board.move(4, 8, BLACK);
+        ai.board.move(7, 11, WHITE);
+        ai.board.move(4, 7, BLACK);
+        ai.board.move(5, 7, WHITE);
+        ai.board.move(4, 6, BLACK);
+        ai.board.move(4, 11, WHITE);
+        ai.board.move(3, 12, BLACK);
+        ai.board.move(4, 5, WHITE);
+        ai.board.move(5, 6, BLACK);
+        ai.board.move(6, 6, WHITE);
+        ai.board.move(6, 5, BLACK);
+        ai.board.move(3, 8, WHITE);
+        ai.board.move(3, 7, BLACK);
+        ai.board.move(4, 4, WHITE);
 
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //    ai.board.backtrace();
-    //}
-    //finish = clock();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+        ai.board.backtrace();
+    }
+    finish = clock();
 
-    //printf("Time: %.3f secs.\n", double(finish - start)/ CLOCKS_PER_SEC);
+    printf("Time: %.3f secs.\n", double(finish - start) / CLOCKS_PER_SEC);
     
     //////////////////////////////////////////////////////////////////////////
     // AI Board TEST
+#if 0
+
     WzqAI ai;
     //ai.board.move(7, 7, BLACK);
     //ai.board.move(7, 8, BLACK);
@@ -497,7 +499,6 @@ int main() try
     //print_black_vc4(ai);
     //print_black_vc4_and_defense(ai);
     ///////////////////////////////////////////////
-    
     ai.move(7, 7, BLACK);
     ai.move(6, 8, WHITE);
     ai.move(7, 9, BLACK);
@@ -543,7 +544,7 @@ int main() try
     ai.move(4, 4, WHITE);
     //print_black_vc4(ai);
     print_black_vc4_and_defense(ai);
-
+#endif
     //////////////////////////////////////////////////////////////////////////
     // BoardHash TEST
     //BoardHash<int> bh;
